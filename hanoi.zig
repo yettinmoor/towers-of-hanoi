@@ -49,7 +49,7 @@ fn printTowers() !void {
         for (towers) |t| {
             const disc_slice = if (t.items.len <= i) "" else disc[0..t.items[i]];
             const padding_slice = if (t.items.len <= i) padding else padding[0..(discs - t.items[i])];
-            try stdout.print("{0}{1}|{1}{0}", .{ padding_slice, disc_slice });
+            try stdout.print("{0s}{1s}|{1s}{0s}", .{ padding_slice, disc_slice });
         }
         if (i == discs - 1) {
             try stdout.print("  Moves: {}", .{moves});
